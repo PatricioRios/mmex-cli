@@ -1,11 +1,11 @@
 [package]
-name = "mmex_cli"
+name = "mmex-cli"
 version = "0.1.0"
 edition = "2021"
 authors = ["Patricio Rios"]
 description = "CLI for Money Manager EX database operations"
 license = "MIT"
-repository = "https://github.com/PatricioRios/mmex_cli"
+repository = "https://github.com/PatricioRios/mmex-cli"
 readme = "README.md"
 keywords = ["mmex", "cli", "finance", "money-manager"]
 categories = ["command-line-utilities"]
