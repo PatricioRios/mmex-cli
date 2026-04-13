@@ -733,7 +733,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
 
 [[package]]
-name = "mmex-cli"
+name = "mmex_cli"
 version = "0.1.1"
 dependencies = [
  "anyhow",
@@ -747,8 +747,6 @@ dependencies = [
 [[package]]
 name = "mmex_lib"
 version = "0.1.1-beta.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2167a63b6a82689c94c15f583f30be7484c4a92df146d294e16e83d2a55b7180"
 dependencies = [
  "chrono",
  "rusqlite",
