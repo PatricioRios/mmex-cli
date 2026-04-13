@@ -747,6 +747,8 @@ dependencies = [
 [[package]]
 name = "mmex_lib"
 version = "0.1.1-beta.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2167a63b6a82689c94c15f583f30be7484c4a92df146d294e16e83d2a55b7180"
 dependencies = [
  "chrono",
  "rusqlite",
