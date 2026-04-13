@@ -12,7 +12,7 @@ use serde_json::json;
 
 pub fn execute(ctx: &MmexContext, cmd: &TransactionCommands, format: OutputFormat) -> Result<()> {
     match cmd {
-        TransactionCommands::List => list(ctx, format),
+        TransactionCommands::List { account_id } => list(ctx, *account_id, format),
         TransactionCommands::Get { id } => get(ctx, *id, format),
         TransactionCommands::Create {
             account_id,
@@ -136,8 +136,13 @@ pub fn execute(ctx: &MmexContext, cmd: &TransactionCommands, format: OutputForma
     }
 }
 
-fn list(ctx: &MmexContext, format: OutputFormat) -> Result<()> {
-    let transactions = ctx.transactions().get_all_transactions()?;
+fn list(ctx: &MmexContext, account_id: Option<i64>, format: OutputFormat) -> Result<()> {
+    let transactions = match account_id {
+        Some(id) => ctx
+            .transactions()
+            .get_transactions_for_account(AccountId::new(id))?,
+        None => ctx.transactions().get_all_transactions()?,
+    };
 
     match format {
         OutputFormat::Json => print_json(&transactions),

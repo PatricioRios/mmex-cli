@@ -127,7 +127,10 @@ pub enum AccountCommands {
 
 #[derive(Subcommand)]
 pub enum TransactionCommands {
-    List,
+    List {
+        #[arg(long)]
+        account_id: Option<i64>,
+    },
     Get {
         id: i64,
     },
